@@ -1,0 +1,27 @@
+<!-- <button (click)="goToService()">
+Login  </button> --> 
+<div class="container">
+    <div class="row">
+        <div class="col mt-5 mb-5">
+            <div class="col-md-8 mx-auto">
+                <form (ngSubmit)="login()">
+                    <h1>Iniciar Session</h1>
+                    <div class="form-group">
+                        <label for="degreeInput">Correo electónico</label>
+                        <input class="form-control" type="email" name="email" [(ngModel)]="user.email">
+                    </div>
+                    <div class="form-group">
+                        <label for="emailInput">Contraseña</label>
+                        <input class="form-control" type="password" name="password" [(ngModel)]="user.password">
+                    </div>
+                    <br>
+                    <button class="btn btn-primary">Entrar</button>
+                    &nbsp;
+                    <button class="btn btn-outline-secondary" routerLink="/register">Registrarme</button>
+
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>

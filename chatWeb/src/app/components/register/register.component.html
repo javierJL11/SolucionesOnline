@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col mt-5 mb-5">
+            <div class="col-md-8 mx-auto">
+                <h1>Registre un nuevo usuario</h1>
+                <form (ngSubmit)="saveUser()">
+                    <div class="form-group">
+                        <label for="nameInput">Nombre de usuario</label>
+                        <input class="form-control" type="text" name="name" [(ngModel)]="user.name">
+                    </div>
+                    <div class="form-group">
+                        <label for="degreeInput">Correo electónico</label>
+                        <input class="form-control" type="email" name="email" [(ngModel)]="user.email">
+                    </div>
+                    <div class="form-group">
+                        <label for="emailInput">Contraseña</label>
+                        <input class="form-control" type="password" name="password" [(ngModel)]="user.password">
+                    </div>
+                    <br>
+                    <button class="btn btn-outline-secondary" routerLink="/">Volver</button>
+                    &nbsp;
+                    <button class="btn btn-primary" >Registrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

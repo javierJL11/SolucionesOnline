@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<div class="container">
+<div class="row">
+    <div class="col mt-5 mb-5">
+      <div class="col-md-8 mx-auto">
+        <h1>Mis Servicios</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Nombre del usuario</th>
+                    <th scope="col">Acciones</th>
+            
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let srv of services">
+                    <th scope="row">{{srv.id}}</th>
+                    <th>{{srv.title}}</th>
+                    <th>{{srv.description}}</th>
+                    <th>{{srv.userName}}</th>
+                    <th style="display: flex;">
+                      <button class="btn btn-warning" routerLink="edit/{{srv.id}}">Editar</button>
+                      &nbsp;
+                      <button class="btn btn-danger" (click)="deleteService(srv.id)">Eliminar</button>
+
+                    </th>
+            
+                </tr>
+            </tbody>
+            </table>
+            <button class="btn btn-primary" routerLink="create">Crear nuevo servicio</button>
+
+      </div>
+    </div>
+  </div>
+</div>

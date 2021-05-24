@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col mt-5 mb-5">
+            <div class="col-md-8 mx-auto">
+                <h1>Chat</h1>
+                <div *ngIf="messages; else other" id="boxChat">
+                    <div  *ngFor="let ms of messages">
+                            <div class="card  bg-light mb-3" style="max-width: 18rem;margin-left: 300px;"
+                                *ngIf="idUser == ms.idAuthor; else other">
+                                <div class="card-header">{{ms.name}}/ {{ms.created_at}}</div>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ms.message}}</h5>
+                                </div>
+                            </div>
+                            <ng-template #other>
+                                <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                                    <div class="card-header">{{ms.name}} / {{ms.created_at}}</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ms.message}}</h5>
+                                        <h5>{{idUser}}</h5>
+                                        <h5>{{ms.idAuthor}}</h5>
+
+                                    </div>
+                                </div>
+                            </ng-template>
+                    </div>
+
+                </div>
+                <ng-template #other>
+                    <h1>no hay mensajes</h1>
+                </ng-template>
+                <br>
+                <div class="form-group">
+                    <label for="emailInput">Escribir mensaje</label>
+                    <input class="form-control" type="text" name="texto"  [(ngModel)]="texto">
+                </div>
+                <br>
+                <button class="btn btn-primary" (click)="sendMessage()">Enviar</button>
+            </div>
+        </div>
+    </div>

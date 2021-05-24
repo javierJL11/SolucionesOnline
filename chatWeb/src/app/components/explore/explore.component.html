@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<div class="container">
+<div class="row">
+    <div class="col mt-5 mb-5">
+      <div class="col-md-8 mx-auto">
+        <h1>Servicios disponibles</h1>
+
+          <div class="container" *ngFor="let srv of services">
+            <div class="card w-75">
+                <div class="card-body">
+                  <h5 class="card-title">{{srv.title}} / {{srv.userName}}</h5>
+                  <p class="card-text">{{srv.description}}</p>
+                  <a  class="btn btn-primary" (click)="goChat(srv.id)" *ngIf="srv.idUser != idUser">CHAT</a>
+                </div>
+              </div>
+              <br>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>

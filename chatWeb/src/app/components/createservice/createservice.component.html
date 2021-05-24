@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col mt-5 mb-5">
+            <div class="col-md-8 mx-auto">
+                <h1>Crear Servicio</h1>
+                <form (ngSubmit)="saveService()">
+                    <div class="form-group">
+                        <label for="degreeInput">Titulo</label>
+                        <input class="form-control" type="text" name="title" [(ngModel)]="service.title">
+                    </div>
+                    <div class="form-group">
+                        <label for="emailInput">Descripcion</label>
+                        <input class="form-control" type="text" name="description" [(ngModel)]="service.description">
+                    </div>
+                    <br>
+                    <button class="btn btn-outline-secondary">Crear</button>
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+

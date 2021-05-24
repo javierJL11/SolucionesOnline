@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<div class="container">
+<div class="row">
+    <div class="col mt-5 mb-5">
+      <div class="col-md-8 mx-auto">
+        <h1>Bandeja</h1>
+
+          <div class="container" *ngFor="let ct of chats">
+              <div class="card  bg-light mb-3" style="max-width: 18rem;" *ngIf="idUser == ct.idWriter; else other">
+                <div class="card-header">{{ct.title}} / {{ct.userName}}</div>
+                <div class="card-body">
+                  <a href="#" class="btn btn-primary"  routerLink="/messages/{{ct.id}}">Abrir chat</a>
+                </div>
+              </div>
+            <ng-template #other>
+                <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                    <div class="card-header">{{ct.title}}</div>
+                    <span>Creado por:  {{ct.name}}</span>
+
+                    <div class="card-body">
+                        <a href="#" class="btn btn-primary" routerLink="/messages/{{ct.id}}">Abrir chat</a>
+                    </div>
+                </div>
+            </ng-template>
+              <br>
+          </div>
+
+          
+
+      </div>
+    </div>
+  </div>
+</div>
